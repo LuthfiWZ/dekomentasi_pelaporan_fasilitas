@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pelaporan Fasilitas — Dokumentasi Aplikasi</title>
+<meta name="description" content="Sistem pelaporan dan pelacakan perbaikan fasilitas berbasis Flutter & Laravel.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="#hero" class="navbar__logo">
+      <span class="navbar__logo-mark" aria-hidden="true">🔧</span>
+      <span class="navbar__logo-text">Pelaporan<span class="navbar__logo-accent">Fasilitas</span></span>
+    </a>
+
+    <nav class="navbar__links" id="navLinks">
+      <a href="#tentang" class="navbar__link">Tentang</a>
+      <a href="#keunggulan" class="navbar__link">Keunggulan</a>
+      <a href="#fitur" class="navbar__link">Fitur</a>
+      <a href="#screenshot" class="navbar__link">Screenshot</a>
+      <a href="#teknologi" class="navbar__link">Teknologi</a>
+      <a href="#kontak" class="navbar__link navbar__link--cta">Kontak</a>
+    </nav>
+
+    <button class="navbar__burger" id="burgerBtn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-shape hero__bg-shape--1" aria-hidden="true"></div>
+    <div class="hero__bg-shape hero__bg-shape--2" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <div class="hero__content">
+        <span class="badge badge--ember reveal" data-reveal>
+          <span class="badge__dot" aria-hidden="true"></span>
+          Facility Management System
+        </span>
+
+        <h1 class="hero__title reveal" data-reveal>
+          Pelaporan<span class="hero__title-accent">Fasilitas</span>
+        </h1>
+
+        <p class="hero__tagline reveal" data-reveal>
+          Laporkan kerusakan fasilitas (listrik, AC, sanitasi, furniture, dsb.) dan
+          pantau progres perbaikan sampai tuntas — semua dalam satu aplikasi.
+        </p>
+
+        <div class="hero__cta reveal" data-reveal>
+          <a href="#screenshot" class="btn btn--primary">
+            Lihat Demo
+            <span class="btn__icon" aria-hidden="true">→</span>
+          </a>
+          <a href="#fitur" class="btn btn--secondary">Dokumentasi</a>
+          <a href="https://github.com/LuthfiWZ/flutter_pelaopran_fasilitas" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">🐙</span> GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__mockup reveal" data-reveal>
+        <div class="mockup-card">
+          <div class="mockup-card__topbar">
+            <span></span><span></span><span></span>
+          </div>
+          <img
+            src="assets/Home.png"
+            alt="Mockup tampilan utama aplikasi Pelaporan Fasilitas — daftar laporan dengan progress rail"
+            class="mockup-card__img"
+            width="520" height="600" loading="eager">
+        </div>
+        <div class="hero__sticker" aria-hidden="true">
+          <span>🔧 LP-7</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TENTANG ============ -->
+  <section id="tentang" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// profil aplikasi</span>
+        <h2 class="section__title">Tentang</h2>
+        <p class="section__desc">Latar belakang, tujuan, dan siapa yang dibuatkan aplikasi Pelaporan Fasilitas.</p>
+      </div>
+
+      <div class="icon-grid icon-grid--4col">
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon" style="background: var(--color-ember);">🏢</span>
+          <h3 class="icon-card__title">Latar Belakang</h3>
+          <p class="icon-card__desc">Di pergudangan/gedung kantor, kerusakan fasilitas sering terlewat karena proses pelaporan masih manual dan tidak terlacak.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon" style="background: var(--color-steel);">🎯</span>
+          <h3 class="icon-card__title">Tujuan</h3>
+          <p class="icon-card__desc">Menyediakan satu sistem terintegrasi untuk melaporkan, memverifikasi, memproses, dan menyelesaikan perbaikan fasilitas.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon" style="background: var(--color-brass);">👥</span>
+          <h3 class="icon-card__title">Target Pengguna</h3>
+          <p class="icon-card__desc">Pegawai/staff yang melaporkan kerusakan, serta petugas/admin fasilitas yang menindaklanjuti.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon" style="background: var(--color-moss);">⚡</span>
+          <h3 class="icon-card__title">Manfaat Utama</h3>
+          <p class="icon-card__desc">Transparansi progres perbaikan, notifikasi otomatis, dan statistik laporan untuk efisiensi tim fasilitas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KEUNGGULAN ============ -->
+  <section id="keunggulan" class="section section--alt">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// kenapa pelaporan fasilitas</span>
+        <h2 class="section__title">Keunggulan</h2>
+        <p class="section__desc">Enam alasan utama pengguna memilih aplikasi ini.</p>
+      </div>
+
+      <div class="icon-grid">
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--ember">📱</span>
+          <h3 class="icon-card__title">Mobile-First</h3>
+          <p class="icon-card__desc">Dikembangkan dengan Flutter, tersedia di Android & iOS sekaligus.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--rust">🚨</span>
+          <h3 class="icon-card__title">Pelaporan Instan</h3>
+          <p class="icon-card__desc">Laporkan kerusakan hanya dalam 3 langkah: foto & kategori, detail, kirim.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--brass">🔍</span>
+          <h3 class="icon-card__title">Verifikasi oleh Petugas</h3>
+          <p class="icon-card__desc">Admin dapat memverifikasi, memproses, dan menyelesaikan laporan dengan progres foto.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--steel">📊</span>
+          <h3 class="icon-card__title">Statistik Real-time</h3>
+          <p class="icon-card__desc">Dashboard admin menampilkan laporan per kategori, status, dan tren bulanan.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--moss">🔔</span>
+          <h3 class="icon-card__title">Notifikasi Otomatis</h3>
+          <p class="icon-card__desc">Pengguna mendapat notifikasi ketika status laporan mereka berubah.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--ember">🔐</span>
+          <h3 class="icon-card__title">Role-Based Access</h3>
+          <p class="icon-card__desc">Pengguna melihat laporan sendiri; admin mengelola semua laporan & kategori.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FITUR UTAMA ============ -->
+  <section id="fitur" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// yang bisa dilakukan</span>
+        <h2 class="section__title">Fitur Utama</h2>
+        <p class="section__desc">Fitur inti yang tersedia di dalam aplikasi Pelaporan Fasilitas.</p>
+      </div>
+
+      <div class="icon-grid">
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--ember">📝</span>
+          <h3 class="icon-card__title">Buat Laporan</h3>
+          <p class="icon-card__desc">Form 3 langkah: pilih kategori & foto,isi detail (judul, deskripsi, lokasi, gedung, ruangan), lalu kirim.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--rust">🏷️</span>
+          <h3 class="icon-card__title">Kategori Kerusakan</h3>
+          <p class="icon-card__desc">Listrik, AC, Sanitasi, Furniture, Fasilitas Umum, Jaringan, dan Lainnya.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--brass">🔎</span>
+          <h3 class="icon-card__title">Detail Laporan</h3>
+          <p class="icon-card__desc">Lihat ticket number (LP-XXXX), timeline perbaikan, foto, dan riwayat status.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--steel">📈</span>
+          <h3 class="icon-card__title">Dashboard Admin</h3>
+          <p class="icon-card__desc">Filter laporan per status/kategori/pencarian, lihat statistik dan grafik tren 6 bulan.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--moss">✅</span>
+          <h3 class="icon-card__title">Update Status & Progres</h3>
+          <p class="icon-card__desc">Admin memperbarui status (dilaporkan → diverifikasi → diproses → selesai) dengan catatan & foto.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--ember">🔔</span>
+          <h3 class="icon-card__title">Manajemen Notifikasi</h3>
+          <p class="icon-card__desc">Notifikasi database dikirim otomatis saat status laporan berubah; tandai sudah dibaca.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREENSHOT ============ -->
+  <section id="screenshot" class="section section--alt">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// tampilan aplikasi</span>
+        <h2 class="section__title">Screenshot</h2>
+        <p class="section__desc">Cuplikan dari beberapa layar utama aplikasi Pelaporan Fasilitas.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="gallery__item reveal" data-reveal>
+          <div class="gallery__frame gallery__frame--rust">
+            <img src="assets/login.png" alt="Tampilan login aplikasi Pelaporan Fasilitas" loading="lazy" width="480" height="340">
+          </div>
+          <figcaption class="gallery__caption">Login / Register — autentikasi berbasis Sanctum token</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" data-reveal>
+          <div class="gallery__frame gallery__frame--ember">
+            <img src="assets/Buat%20Laporan.png" alt="Tampilan form buat laporan 3 langkah" loading="lazy" width="480" height="340">
+          </div>
+          <figcaption class="gallery__caption">Buat Laporan — form 3 langkah dengan foto & kategori</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" data-reveal>
+          <div class="gallery__frame gallery__frame--brass">
+            <img src="assets/Home.png" alt="Tampilan daftar laporan pengguna" loading="lazy" width="480" height="340">
+          </div>
+          <figcaption class="gallery__caption">Home — daftar laporan pribadi dengan progress rail</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" data-reveal>
+          <div class="gallery__frame gallery__frame--steel">
+            <img src="assets/Detail%20Laporan.png" alt="Tampilan detail laporan dengan timeline" loading="lazy" width="480" height="340">
+          </div>
+          <figcaption class="gallery__caption">Detail Laporan — timeline perbaikan & foto progres</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" data-reveal>
+          <div class="gallery__frame gallery__frame--moss">
+            <img src="assets/Dashboard%20Admin.png" alt="Tampilan dashboard admin dengan statistik" loading="lazy" width="480" height="340">
+          </div>
+          <figcaption class="gallery__caption">Dashboard Admin — statistik, grafik, dan filter laporan</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" data-reveal>
+          <div class="gallery__frame gallery__frame--ember">
+            <img src="assets/Notifikasi.png" alt="Tampilan notifikasi" loading="lazy" width="480" height="340">
+          </div>
+          <figcaption class="gallery__caption">Notifikasi — daftar notifikasi status laporan</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ALUR PENGGUNAAN ============ -->
+  <section id="alur" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// cara kerja</span>
+        <h2 class="section__title">Alur Penggunaan</h2>
+        <p class="section__desc">Langkah dari pengguna melaporkan hingga admin menyelesaikan perbaikan.</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__step reveal" data-reveal>
+          <span class="flow__num">01</span>
+          <div class="flow__card">
+            <h3 class="flow__title">Login / Daftar Akun</h3>
+            <p class="flow__desc">Pengguna mendaftar dengan email & password, atau login jika sudah memiliki akun. Token disimpan via Sanctum & SharedPreferences.</p>
+          </div>
+        </li>
+        <li class="flow__step reveal" data-reveal>
+          <span class="flow__num">02</span>
+          <div class="flow__card">
+            <h3 class="flow__title">Buat Laporan (3 Langkah)</h3>
+            <p class="flow__desc">Pilih kategori kerusakan & foto (opsional), isi detail (judul, deskripsi, lokasi, gedung, ruangan), lalu kirim. Sistem men-generate nomor tiket LP-XXXX.</p>
+          </div>
+        </li>
+        <li class="flow__step reveal" data-reveal>
+          <span class="flow__num">03</span>
+          <div class="flow__card">
+            <h3 class="flow__title">Admin Memverifikasi & Memproses</h3>
+            <p class="flow__desc">Admin menerima notifikasi, memverifikasi laporan, mengubah status ke "Diproses", memberi catatan & foto progres.</p>
+          </div>
+        </li>
+        <li class="flow__step reveal" data-reveal>
+          <span class="flow__num">04</span>
+          <div class="flow__card">
+            <h3 class="flow__title">Status Diperbarui → Selesai</h3>
+            <p class="flow__desc">Setiap perubahan status tercatat di timeline riwayat (Status Log). Pengguna mendapat notifikasi otomatis.</p>
+          </div>
+        </li>
+        <li class="flow__step reveal" data-reveal>
+          <span class="flow__num">05</span>
+          <div class="flow__card">
+            <h3 class="flow__title">Pantau Progres & Statistik</h3>
+            <p class="flow__desc">User melihat timeline dan progres laporannya. Admin melihat dashboard statistik (per status, per kategori, tren bulanan).</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ ROLE PENGGUNA ============ -->
+  <section id="role" class="section section--alt">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// akses & peran</span>
+        <h2 class="section__title">Role Pengguna</h2>
+        <p class="section__desc">Peran yang tersedia beserta hak akses masing-masing.</p>
+      </div>
+
+      <div class="table-wrap reveal" data-reveal>
+        <table class="role-table">
+          <thead>
+            <tr>
+              <th>Peran</th>
+              <th>Hak Akses</th>
+              <th>Deskripsi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip chip--ember">Pengguna</span></td>
+              <td>Buat & lihat laporan sendiri, lihat detail & timeline, lihat notifikasi</td>
+              <td>Role default setiap akun baru. Hanya bisa mengelola laporan milik sendiri.</td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--steel">Admin</span></td>
+              <td>Lihat semua laporan, kelola kategori, update status & progres, akses statistik dashboard</td>
+              <td>Bertanggung jawab memverifikasi dan menyelesaikan laporan fasilitas.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATUS FLOW ============ -->
+  <section id="status" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// alur status</span>
+        <h2 class="section__title">Status Laporan</h2>
+        <p class="section__desc">Laporan berjalan melalui 4 tahap perbaikan, masing-masing dengan warna material tersendiri.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow__step reveal" data-reveal>
+          <span class="flow__num" style="background: var(--color-rust); color: #fff;">01</span>
+          <div class="flow__card" style="border-color: var(--color-rust);">
+            <h3 class="flow__title" style="color: var(--color-rust);">Dilaporkan</h3>
+            <p class="flow__desc">Laporan baru diterima dari pengguna — menunggu verifikasi admin.</p>
+          </div>
+        </div>
+        <div class="flow__step reveal" data-reveal>
+          <span class="flow__num" style="background: var(--color-brass); color: #fff;">02</span>
+          <div class="flow__card" style="border-color: var(--color-brass);">
+            <h3 class="flow__title" style="color: var(--color-brass);">Diverifikasi</h3>
+            <p class="flow__desc">Admin memverifikasi laporan — kerusakan dikonfirmasi dan siap diproses.</p>
+          </div>
+        </div>
+        <div class="flow__step reveal" data-reveal>
+          <span class="flow__num" style="background: var(--color-steel); color: #fff;">03</span>
+          <div class="flow__card" style="border-color: var(--color-steel);">
+            <h3 class="flow__title" style="color: var(--color-steel);">Diproses</h3>
+            <p class="flow__desc">Tim teknisi sedang memperbaiki fasilitas — progres dicatat dengan foto & catatan.</p>
+          </div>
+        </div>
+        <div class="flow__step reveal" data-reveal>
+          <span class="flow__num" style="background: var(--color-moss); color: #fff;">04</span>
+          <div class="flow__card" style="border-color: var(--color-moss);">
+            <h3 class="flow__title" style="color: var(--color-moss);">Selesai</h3>
+            <p class="flow__desc">Perbaikan selesai. Laporan ditandai tuntas dan ditutup.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODUL SISTEM ============ -->
+  <section id="modul" class="section section--alt">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// bagian sistem</span>
+        <h2 class="section__title">Modul Sistem</h2>
+        <p class="section__desc">Modul-modul utama yang membentuk aplikasi Pelaporan Fasilitas.</p>
+      </div>
+
+      <div class="icon-grid">
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--ember">🔐</span>
+          <h3 class="icon-card__title">Modul Autentikasi</h3>
+          <p class="icon-card__desc">Registrasi, login, logout, dan restore sesi via Sanctum token + SharedPreferences.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--rust">📝</span>
+          <h3 class="icon-card__title">Modul Pelaporan</h3>
+          <p class="icon-card__desc">Membuat laporan fasilitas dengan foto, kategori, lokasi, gedung, dan ruangan.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--brass">📂</span>
+          <h3 class="icon-card__title">Modul Kategori</h3>
+          <p class="icon-card__desc">Mengelola kategori kerusakan (hanya admin): CRUD kategori dengan description.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--steel">🔄</span>
+          <h3 class="icon-card__title">Modul Update Status</h3>
+          <p class="icon-card__desc">Admin memperbarui status laporan (dilaporkan → selesai) dengan catatan & foto progres.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--moss">📊</span>
+          <h3 class="icon-card__title">Modul Statistik</h3>
+          <p class="icon-card__desc">Dashboard admin: total laporan, distribusi status, per kategori, dan tren 6 bulan.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--ember">🔔</span>
+          <h3 class="icon-card__title">Modul Notifikasi</h3>
+          <p class="icon-card__desc">Database notification dikirim otomatis saat status laporan berubah; terbaca / belum terbaca.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEKNOLOGI ============ -->
+  <section id="teknologi" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// tech stack</span>
+        <h2 class="section__title">Teknologi</h2>
+        <p class="section__desc">Kumpulan teknologi yang digunakan untuk membangun aplikasi Pelaporan Fasilitas.</p>
+      </div>
+
+      <div class="icon-grid">
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--ember" style="font-size: 1.8rem;">📱</span>
+          <span class="icon-card__eyebrow">Mobile App</span>
+          <h3 class="icon-card__title">Flutter 3.11+</h3>
+          <p class="icon-card__desc">Framework UI cross-platform untuk Android & iOS dengan Material 3.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--steel" style="font-size: 1.8rem;">☁️</span>
+          <span class="icon-card__eyebrow">Backend</span>
+          <h3 class="icon-card__title">Laravel 13</h3>
+          <p class="icon-card__desc">Framework PHP untuk REST API dengan Eloquent ORM & Sanctum auth.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--moss" style="font-size: 1.8rem;">🐘</span>
+          <span class="icon-card__eyebrow">Database</span>
+          <h3 class="icon-card__title">MySQL / SQLite</h3>
+          <p class="icon-card__desc">Menyimpan data user, laporan, kategori, status log, &amp; notifikasi.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--brass" style="font-size: 1.8rem;">🌐</span>
+          <span class="icon-card__eyebrow">HTTP / State</span>
+          <h3 class="icon-card__title">Dio + Provider</h3>
+          <p class="icon-card__desc">HTTP client dengan interceptor token &amp; manajemen state reaktif.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--rust" style="font-size: 1.8rem;">🔑</span>
+          <span class="icon-card__eyebrow">Autentikasi</span>
+          <h3 class="icon-card__title">Sanctum API Tokens</h3>
+          <p class="icon-card__desc">Token-based auth dengan encrypted personal access tokens.</p>
+        </div>
+        <div class="icon-card reveal" data-reveal>
+          <span class="icon-card__icon icon-card__icon--ember" style="font-size: 1.8rem;">💾</span>
+          <span class="icon-card__eyebrow">Persistensi</span>
+          <h3 class="icon-card__title">SharedPreferences</h3>
+          <p class="icon-card__desc">Menyimpan token &amp; data user secara lokal untuk restore sesi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARSITEKTUR ============ -->
+  <section id="arsitektur" class="section section--alt">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// alur sistem</span>
+        <h2 class="section__title">Arsitektur</h2>
+        <p class="section__desc">Alur data dari sisi pengguna hingga ke penyimpanan, melalui REST API terautentikasi.</p>
+      </div>
+
+      <div class="arch reveal" data-reveal>
+        <div class="arch__node">
+          <span class="arch__icon arch__icon--ember">📱</span>
+          <h3 class="arch__title">Flutter Client</h3>
+          <p class="arch__desc">Aplikasi mobile (Android/iOS) menggunakan Dio HTTP client + Provider state management.</p>
+        </div>
+        <span class="arch__arrow" aria-hidden="true">→</span>
+        <div class="arch__node">
+          <span class="arch__icon arch__icon--steel">🔐</span>
+          <h3 class="arch__title">Sanctum Auth</h3>
+          <p class="arch__desc">Bearer token (API token) dikirim di setiap request melalui interceptor Dio.</p>
+        </div>
+        <span class="arch__arrow" aria-hidden="true">→</span>
+        <div class="arch__node">
+          <span class="arch__icon arch__icon--moss">🌐</span>
+          <h3 class="arch__title">Laravel API</h3>
+          <p class="arch__desc">REST API (v1) memproses request: validasi, otorisasi, logika bisnis, notifikasi.</p>
+        </div>
+        <span class="arch__arrow" aria-hidden="true">→</span>
+        <div class="arch__node">
+          <span class="arch__icon arch__icon--brass">🛢️</span>
+          <h3 class="arch__title">MySQL / SQLite</h3>
+          <p class="arch__desc">Menyimpan data user, laporan, kategori, status log, dan notifikasi database.</p>
+        </div>
+      </div>
+
+      <p class="arch__note reveal" data-reveal>
+        Setiap aksi pengguna di Flutter dikirim sebagai permintaan HTTP ke Laravel API
+        dengan header <code>Authorization: Bearer &lt;token&gt;</code>. Server memvalidasi
+        token, memproses logika bisnis (mis. update status laporan), mengirim notifikasi
+        ke user yang bersangkutan, lalu menulis data ke database sebelum mengembalikan
+        respons JSON ke client.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ DATABASE ============ -->
+  <section id="database" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// struktur data</span>
+        <h2 class="section__title">Database</h2>
+        <p class="section__desc">Skema tabel dan relasi pada aplikasi Pelaporan Fasilitas.</p>
+      </div>
+
+      <div class="db-stats">
+        <div class="db-stat reveal" data-reveal>
+          <span class="db-stat__num">5</span>
+          <span class="db-stat__label">Tabel Utama</span>
+        </div>
+        <div class="db-stat reveal" data-reveal>
+          <span class="db-stat__num">1:N</span>
+          <span class="db-stat__label">Relasi Dominan</span>
+        </div>
+        <div class="db-stat reveal" data-reveal>
+          <span class="db-stat__num">Enum</span>
+          <span class="db-stat__label">Status Report</span>
+        </div>
+      </div>
+
+      <ul class="db-list">
+        <li class="db-list__item reveal" data-reveal>
+          <span class="chip chip--ember">1:N</span>
+          <span class="db-list__text"><strong>User</strong> → <strong>Report</strong> — satu pengguna dapat membuat banyak laporan</span>
+        </li>
+        <li class="db-list__item reveal" data-reveal>
+          <span class="chip chip--steel">1:N</span>
+          <span class="db-list__text"><strong>Category</strong> → <strong>Report</strong> — satu kategori dapat memiliki banyak laporan</span>
+        </li>
+        <li class="db-list__item reveal" data-reveal>
+          <span class="chip chip--moss">1:N</span>
+          <span class="db-list__text"><strong>Report</strong> → <strong>ReportStatusLog</strong> — satu laporan memiliki banyak catatan perubahan status</span>
+        </li>
+        <li class="db-list__item reveal" data-reveal>
+          <span class="chip chip--rust">1:N</span>
+          <span class="db-list__text"><strong>User</strong> → <strong>personal_access_tokens</strong> — satu user dapat memiliki banyak API token</span>
+        </li>
+        <li class="db-list__item reveal" data-reveal>
+          <span class="chip chip--brass">N:1</span>
+          <span class="db-list__text"><strong>notifications</strong> → <strong>User</strong> (morph) — notifikasi disimpan berdasarkan notifiable_type</span>
+        </li>
+      </ul>
+
+      <div class="schema-reveal reveal" data-reveal>
+        <div class="schema-card">
+          <div class="schema-card__header" style="background: var(--color-ember);">
+            <span class="schema-card__title">users</span>
+          </div>
+          <ul class="schema-card__cols">
+            <li><code>id</code> (bigint, PK, auto-increment)</li>
+            <li><code>name</code> (varchar 255)</li>
+            <li><code>email</code> (varchar 255, unique)</li>
+            <li><code>role</code> (enum: user, admin)</li>
+            <li><code>password</code> (varchar 255, hashed)</li>
+            <li><code>timestamps</code></li>
+          </ul>
+        </div>
+        <div class="schema-card">
+          <div class="schema-card__header" style="background: var(--color-steel);">
+            <span class="schema-card__title">reports</span>
+          </div>
+          <ul class="schema-card__cols">
+            <li><code>id</code> (PK)</li>
+            <li><code>user_id</code> (FK → users)</li>
+            <li><code>category_id</code> (FK → categories)</li>
+            <li><code>title</code>, <code>description</code> (text)</li>
+            <li><code>location</code>, <code>building</code>, <code>room</code></li>
+            <li><code>photo</code> (path, nullable)</li>
+            <li><code>status</code> (enum: dilaporkan/diverifikasi/diproses/selesai)</li>
+            <li><code>note</code> (text, nullable)</li>
+          </ul>
+        </div>
+        <div class="schema-card">
+          <div class="schema-card__header" style="background: var(--color-brass);">
+            <span class="schema-card__title">categories</span>
+          </div>
+          <ul class="schema-card__cols">
+            <li><code>id</code> (PK)</li>
+            <li><code>name</code> (varchar 255, unique)</li>
+            <li><code>description</code> (text, nullable)</li>
+            <li><code>timestamps</code></li>
+          </ul>
+        </div>
+        <div class="schema-card">
+          <div class="schema-card__header" style="background: var(--color-moss);">
+            <span class="schema-card__title">report_status_logs</span>
+          </div>
+          <ul class="schema-card__cols">
+            <li><code>id</code> (PK)</li>
+            <li><code>report_id</code> (FK → reports)</li>
+            <li><code>status</code> (string)</li>
+            <li><code>note</code>, <code>photo</code> (nullable)</li>
+            <li><code>user_id</code> (nullable FK → users)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ API ENDPOINTS ============ -->
+  <section id="api" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// rest api</span>
+        <h2 class="section__title">API Endpoint</h2>
+        <p class="section__desc">REST API v1 berbasis Laravel Sanctum — semua endpoint prefix <code>/api/v1</code>.</p>
+      </div>
+
+      <div class="table-wrap reveal" data-reveal>
+        <table class="api-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Endpoint</th>
+              <th>Deskripsi</th>
+              <th>Auth</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip chip--amber">POST</span></td>
+              <td><code>/register</code></td>
+              <td>Registrasi akun baru (role: user)</td>
+              <td><span class="chip chip--gray">—</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--amber">POST</span></td>
+              <td><code>/login</code></td>
+              <td>Login, kembalikan API token</td>
+              <td><span class="chip chip--gray">—</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--blue">GET</span></td>
+              <td><code>/user</code></td>
+              <td>Ambil data user yang terautentikasi</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--amber">POST</span></td>
+              <td><code>/logout</code></td>
+              <td>Invalidate API token</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--blue">GET</span></td>
+              <td><code>/categories</code></td>
+              <td>Daftar semua kategori (dengan report count)</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--amber">POST</span></td>
+              <td><code>/categories</code></td>
+              <td>Buat kategori baru (admin)</td>
+              <td><span class="chip chip--moss">Admin</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--blue">GET</span></td>
+              <td><code>/reports</code></td>
+              <td>Daftar laporan (user lihat sendiri; admin lihat semua + filter)</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--amber">POST</span></td>
+              <td><code>/reports</code></td>
+              <td>Buat laporan baru (multipart, foto opsional)</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--blue">GET</span></td>
+              <td><code>/reports/{id}</code></td>
+              <td>Detail laporan lengkap (user &amp; kategori &amp; timeline)</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--amber">PUT</span></td>
+              <td><code>/reports/{id}/status</code></td>
+              <td>Update status laporan (admin: catatan &amp; foto progres)</td>
+              <td><span class="chip chip--moss">Admin</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--pink">DELETE</span></td>
+              <td><code>/reports/{id}</code></td>
+              <td>Hapus laporan (admin semua; user hanya milik sendiri)</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--blue">GET</span></td>
+              <td><code>/notifications</code></td>
+              <td>Daftar notifikasi (maks 50)</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--blue">GET</span></td>
+              <td><code>/notifications/unread-count</code></td>
+              <td>Jumlah notifikasi belum dibaca</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--amber">PUT</span></td>
+              <td><code>/notifications/{id}</code></td>
+              <td>Tandai satu notifikasi sudah dibaca</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--amber">PUT</span></td>
+              <td><code>/notifications</code></td>
+              <td>Tandai semua notifikasi sudah dibaca</td>
+              <td><span class="chip chip--steel">Sanctum</span></td>
+            </tr>
+            <tr>
+              <td><span class="chip chip--blue">GET</span></td>
+              <td><code>/admin/stats</code></td>
+              <td>Statistik dashboard (total, per status, per kategori, per bulan)</td>
+              <td><span class="chip chip--moss">Admin</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KEAMANAN ============ -->
+  <section id="keamanan" class="section section--alt">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// perlindungan data</span>
+        <h2 class="section__title">Keamanan</h2>
+        <p class="section__desc">Fitur keamanan yang diterapkan untuk melindungi data pengguna.</p>
+      </div>
+
+      <div class="security-grid">
+        <span class="security-chip reveal" data-reveal><span aria-hidden="true">🔑</span> Sanctum API Token (hashed)</span>
+        <span class="security-chip reveal" data-reveal><span aria-hidden="true">🔒</span> Password di-hash (bcrypt)</span>
+        <span class="security-chip reveal" data-reveal><span aria-hidden="true">🛡️</span> Role-Based Middleware (admin)</span>
+        <span class="security-chip reveal" data-reveal><span aria-hidden="true">🌐</span> Koneksi HTTPS / Lokalhost</span>
+        <span class="security-chip reveal" data-reveal><span aria-hidden="true">📁</span> Foto di-upload ke storage/app/public</span>
+        <span class="security-chip reveal" data-reveal><span aria-hidden="true">✅</span> Server-side Validation di setiap endpoint</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KEBUTUHAN SISTEM ============ -->
+  <section id="kebutuhan" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// spesifikasi</span>
+        <h2 class="section__title">Kebutuhan Sistem</h2>
+        <p class="section__desc">Spesifikasi perangkat agar aplikasi berjalan lancar.</p>
+      </div>
+
+      <div class="req-grid">
+        <div class="req-card reveal" data-reveal>
+          <span class="req-card__label">Backend (Laravel API)</span>
+          <ul class="req-card__list">
+            <li>PHP 8.3+</li>
+            <li>Composer</li>
+            <li>MySQL 8.0 / SQLite</li>
+            <li>Node.js 20+ (Vite build assets)</li>
+            <li>Web server (Apache/Nginx) atau php artisan serve</li>
+          </ul>
+        </div>
+        <div class="req-card req-card--featured reveal" data-reveal>
+          <span class="req-card__badge">Disarankan</span>
+          <span class="req-card__label">Mobile App (Flutter)</span>
+          <ul class="req-card__list">
+            <li>Flutter SDK 3.11+</li>
+            <li>Android 8.0+ / iOS 13+</li>
+            <li>Android Emulator atau device fisik</li>
+            <li>Koneksi internet (API localhost via 10.0.2.2)</li>
+            <li>Ruang penyimpanan 200 MB</li>
+          </ul>
+        </div>
+        <div class="req-card reveal" data-reveal>
+          <span class="req-card__label">Dukungan Platform</span>
+          <ul class="req-card__list">
+            <li>Android &amp; iOS (aplikasi mobile Flutter)</li>
+            <li>Laravel API via browser atau Postman</li>
+            <li>Endpoint teruji dengan token Sanctum</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// pertanyaan umum</span>
+        <h2 class="section__title">FAQ</h2>
+        <p class="section__desc">Pertanyaan yang paling sering ditanyakan.</p>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion__item reveal" data-reveal>
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>Bagaimana cara menjalankan backend Laravel API?</span>
+            <span class="accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion__panel">
+            <p class="accordion__content">Clone repo api_pelaporan_fasilitas, jalankan <code>composer install</code>, salin <code>.env.example</code> ke <code>.env</code>, jalankan <code>php artisan key:generate</code> &amp; <code>php artisan migrate --seed</code>, lalu <code>php artisan serve</code>.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item reveal" data-reveal>
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>Bagaimana cara menjalankan aplikasi Flutter?</span>
+            <span class="accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion__panel">
+            <p class="accordion__content">Pastikan Laravel API sudah berjalan. Clone repo flutter_pelaopran_fasilitas, jalankan <code>flutter pub get</code>, lalu <code>flutter run</code>. Untuk Android emulator, API URL sudah diarahkan ke <code>10.0.2.2:8000</code>.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item reveal" data-reveal>
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>Apakah ada akun demo untuk mencoba?</span>
+            <span class="accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion__panel">
+            <p class="accordion__content">Ya. Setelah menjalankan <code>php artisan db:seed</code>, tersedia: <strong>admin@pelaporan.test</strong> / <strong>password123</strong> (role admin), dan <strong>user@pelaporan.test</strong> / <strong>password123</strong> (role user).</p>
+          </div>
+        </div>
+
+        <div class="accordion__item reveal" data-reveal>
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>Bagaimana akun admin diberikan hak akses?</span>
+            <span class="accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion__panel">
+            <p class="accordion__content">Hak akses admin dikelola lewat kolom <code>role</code> di tabel <code>users</code> (enum: <code>user</code> / <code>admin</code>). Middleware <code>admin</code> melindari endpoint kategori CRUD dan statistik.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item reveal" data-reveal>
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>Apakah foto laporan disimpan di server?</span>
+            <span class="accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion__panel">
+            <p class="accordion__content">Ya. Foto laporan &amp; progres disimpan di folder <code>storage/app/public/reports/</code>. URL foto dapat diakses via <code>/storage/{path}</code>.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item reveal" data-reveal>
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>Bagaimana cara mengganti API URL pada Flutter?</span>
+            <span class="accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion__panel">
+            <p class="accordion__content">Jalankan Flutter dengan <code>--dart-define=API_URL=http://host-anda:8000/api/v1</code>. Jika tidak dispecifikasi, web memakai <code>localhost:8000</code> dan Android emulator memakai <code>10.0.2.2:8000</code>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REPOSITORI ============ -->
+  <section id="repositori" class="section section--alt">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// sumber kode</span>
+        <h2 class="section__title">Repositori GitHub</h2>
+        <p class="section__desc">Akses langsung ke source code lengkap aplikasi.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a href="https://github.com/LuthfiWZ/flutter_pelaopran_fasilitas" class="contact-card reveal" data-reveal target="_blank" rel="noopener noreferrer">
+          <span class="contact-card__icon" style="background: var(--color-ember);">📱</span>
+          <span class="contact-card__label">Flutter App</span>
+          <span class="contact-card__value">Source code aplikasi mobile</span>
+        </a>
+        <a href="https://github.com/LuthfiWZ/api_pelaporan_fasilitas" class="contact-card reveal" data-reveal target="_blank" rel="noopener noreferrer">
+          <span class="contact-card__icon" style="background: var(--color-steel);">☁️</span>
+          <span class="contact-card__label">Laravel API</span>
+          <span class="contact-card__value">Source code backend REST API</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAK ============ -->
+  <section id="kontak" class="section">
+    <div class="container">
+      <div class="section__head reveal" data-reveal>
+        <span class="eyebrow">// hubungi kami</span>
+        <h2 class="section__title">Kontak</h2>
+        <p class="section__desc">Ada pertanyaan atau masukan? Hubungi kami.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a href="https://github.com/LuthfiWZ" class="contact-card reveal" data-reveal target="_blank" rel="noopener noreferrer">
+          <span class="contact-card__icon" style="background: var(--color-ember);">🐙</span>
+          <span class="contact-card__label">GitHub</span>
+          <span class="contact-card__value">Lihat source code lengkap</span>
+        </a>
+        <a href="https://github.com/LuthfiWZ/api_pelaporan_fasilitas/issues" class="contact-card reveal" data-reveal target="_blank" rel="noopener noreferrer">
+          <span class="contact-card__icon" style="background: var(--color-steel);">💬</span>
+          <span class="contact-card__label">Issues</span>
+          <span class="contact-card__value">Laporkan bug atau fitur</span>
+        </a>
+        <a href="mailto:pelaporanfasilitas@gmail.com" class="contact-card reveal" data-reveal>
+          <span class="contact-card__icon" style="background: var(--color-moss);">✉️</span>
+          <span class="contact-card__label">Email</span>
+          <span class="contact-card__value">pelaporanfasilitas@gmail.com</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Pelaporan Fasilitas. Semua hak dilindungi. <span class="footer__version">v1.0.0</span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
